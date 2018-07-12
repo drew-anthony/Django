@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+    <form action="/process" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" class="form-control" name="name" placeholder="Enter Name">
+            <label for="location">Dojo Location:</label>
+            <select class="form-control" name="location" placeholder="Choose Loocation">
+                <option>Tulsa</option>
+                <option>Silicon Valley</option>
+                <option>Seattle</option>
+                <option>Chicago</option>
+            </select>
+            <label for="language">Favorite Language:</label>
+            <select class="form-control" name="language" placeholder="Choose Language">
+                <option>JavaScript</option>
+                <option>Python</option>
+                <option>MEAN</option>
+                <option>C#</option>
+            </select>
+            <div class="form-group">
+                <label for="comments">Comment(Optional):</label>
+                <textarea class="form-control" name="comments" rows="3"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    </div>
+</body>
+</html>

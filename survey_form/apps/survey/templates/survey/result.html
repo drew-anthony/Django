@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+<body>
+    <form action="/survey" method="POST">
+        {% csrf_token %}
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-header">Info</div>
+            <div class="card-body">
+              <p class="card-text">{{request.session.name}}</p>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{request.session.location}}</p>
+              </div>
+              <div class="card-body">
+                <p class="card-text">{{request.session.language}}</p>
+              </div>
+              <div class="card-body">
+                <p class="card-text">{{request.session.comments}}</p>
+              </div>
+          </div>
+    </form>
+</body>
+</html>
